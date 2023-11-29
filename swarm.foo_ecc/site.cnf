@@ -1,0 +1,22 @@
+[req]
+distinguished_name = req_distinguished_name
+prompt = no
+[req_distinguished_name]
+C = US
+ST = DE
+L = Middletown
+O = Sempernow LLC
+OU = Sempernow LLC
+CN = swarm.foo
+[server]
+authorityKeyIdentifier=keyid,issuer
+basicConstraints = critical,CA:FALSE
+extendedKeyUsage=serverAuth
+keyUsage = critical, digitalSignature, keyEncipherment
+subjectKeyIdentifier=hash
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = swarm.foo
+DNS.2 = *.swarm.foo
+DNS.3 = localhost
+DNS.4 = ::1
